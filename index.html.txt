@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aswin Suresh | Warehouse Team Leader Portfolio</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #0F172A;
+      --accent: #2563EB;
+      --accent-hover: #1D4ED8;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #334155;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Hero */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 60px 0 40px;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .status-badge {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ADE80;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: #4ADE80;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p.subtitle {
+      font-size: 1.25rem;
+      color: #94A3B8;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .contact-btn {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-btn:hover {
+      background: var(--accent);
+    }
+
+    /* Layout Sections */
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .metric-card h3 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .metric-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .job-card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .job-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      background: var(--bg-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .job-card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .job-card li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-card h4 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .job-header { flex-direction: column; gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / HEADER -->
+  <header>
+    <div class="container hero-content">
+      <div class="status-badge">
+        <span class="status-pulse"></span>
+        Available Immediately | Sharjah, UAE (GCC)[cite: 1]
+      </div>
+      <h1>Aswin Suresh</h1>
+      <p class="subtitle">Warehouse Team Leader | Supply Chain Operations & Logistics Specialist[cite: 1]</p>
+      
+      <div class="contact-links">
+        <a href="tel:+971559710870" class="contact-btn"><i class="fa-solid fa-phone"></i> +971 559 710 870</a>[cite: 1]
+        <a href="mailto:aswinsuresh696@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> aswinsuresh696@gmail.com</a>[cite: 1]
+        <a href="https://linkedin.com/in/aswinsinjikaalayil" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>[cite: 1]
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- EXECUTIVE SUMMARY -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-user-check"></i> Professional Profile</h2>
+      <p style="font-size: 1.05rem;">
+        Results-driven <strong>Warehouse Team Leader</strong> with 2+ years of experience managing regulated medical supply chains (UPS/BVI Medical) and high-volume retail logistics (DHL/Sephora)[cite: 1]. Proven track record of 100% inventory accuracy, 100% on-time dispatch, and zero compliance breaches[cite: 1]. Combines supply chain operations expertise with a background in software development to optimize WMS, ERP, and continuous improvement (Kaizen) workflows[cite: 1].
+      </p>
+    </section>
+
+    <!-- METRICS -->
+    <section>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h3>100%</h3>
+          <p>Inventory Accuracy[cite: 1]</p>
+        </div>
+        <div class="metric-card">
+          <h3>100%</h3>
+          <p>On-Time Dispatch (OTIF)[cite: 1]</p>
+        </div>
+        <div class="metric-card">
+          <h3>Zero</h3>
+          <p>Compliance / HSE Breaches[cite: 1]</p>
+        </div>
+        <div class="metric-card">
+          <h3>+15%</h3>
+          <p>Throughput Improvement (Kaizen)[cite: 1]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work History</h2>
+      <div class="timeline">
+        
+        <!-- Job 1 -->
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Warehouse Team Leader</div>
+              <div class="company">UPS - BVI Medical (UK)[cite: 1]</div>
+            </div>
+            <div class="job-date">Feb 2025 – Oct 2025[cite: 1]</div>
+          </div>
+          <ul>
+            <li>Managed end-to-end regulated medical supply chain operations with zero compliance breaches[cite: 1].</li>
+            <li>Led daily shift briefings, KPI monitoring, and team performance management[cite: 1].</li>
+            <li>Implemented 3 Kaizen continuous improvement initiatives, increasing pick-and-pack throughput by 15%[cite: 1].</li>
+            <li>Leveraged <strong>Softeon WMS</strong> to streamline receiving, put-away, picking, and packing processes[cite: 1].</li>
+            <li>Enforced FIFO/FEFO compliance and cycle counts using <strong>SAP S/4HANA</strong>[cite: 1].</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Warehouse Administrator</div>
+              <div class="company">DHL - Sephora (UK)[cite: 1]</div>
+            </div>
+            <div class="job-date">Sep 2024 – Feb 2025[cite: 1]</div>
+          </div>
+          <ul>
+            <li>Managed inventory and shipment tracking for a distribution center processing 500+ SKUs daily[cite: 1].</li>
+            <li>Produced weekly KPI dashboards (OTIF, order accuracy, efficiency) and conducted internal audits[cite: 1].</li>
+            <li>Streamlined inbound and outbound workflows using lean operations principles[cite: 1].</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Warehouse Associate</div>
+              <div class="company">The Range (UK)[cite: 1]</div>
+            </div>
+            <div class="job-date">Feb 2024 – Sep 2024[cite: 1]</div>
+          </div>
+          <ul>
+            <li>Processed 200+ orders per shift with zero mispick incidents and zero HSE incidents[cite: 1].</li>
+            <li>Performed pick & pack, cycle counting, stock replenishment, and put-away tasks[cite: 1].</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Software Developer</div>
+              <div class="company">Empyef Technologies (India)[cite: 1]</div>
+            </div>
+            <div class="job-date">Dec 2021 – Oct 2023[cite: 1]</div>
+          </div>
+          <ul>
+            <li>Developed applications utilizing Python, Java, JavaScript, Bootstrap, and CodeIgniter 4[cite: 1].</li>
+            <li>Applied technical logic and problem-solving skills to logistics and supply chain systems[cite: 1].</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS & EDUCATION -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-gears"></i> Core Skills & Education</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h4><i class="fa-solid fa-boxes-stacked"></i> Supply Chain & WMS</h4>
+          <div class="tags">
+            <span class="tag">SAP S/4HANA</span>[cite: 1]
+            <span class="tag">Softeon WMS</span>[cite: 1]
+            <span class="tag">FIFO / FEFO</span>[cite: 1]
+            <span class="tag">Inventory Control</span>[cite: 1]
+            <span class="tag">TMS</span>[cite: 1]
+            <span class="tag">RF Scanning Systems</span>[cite: 1]
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fa-solid fa-chart-line"></i> Analytics & Software</h4>
+          <div class="tags">
+            <span class="tag">Advanced Excel</span>[cite: 1]
+            <span class="tag">Power BI</span>[cite: 1]
+            <span class="tag">Python</span>[cite: 1]
+            <span class="tag">JavaScript</span>[cite: 1]
+            <span class="tag">CodeIgniter 4</span>[cite: 1]
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fa-solid fa-certificate"></i> Certifications</h4>
+          <div class="tags">
+            <span class="tag">SAP S/4HANA (Coursera, 2026)</span>[cite: 1]
+            <span class="tag">Lean & Kaizen</span>[cite: 1]
+            <span class="tag">Medical Supply Chain Compliance</span>[cite: 1]
+            <span class="tag">HSE Awareness</span>[cite: 1]
+            <span class="tag">Forklift Awareness</span>[cite: 1]
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4><i class="fa-solid fa-graduation-cap"></i> Education & Languages</h4>
+          <p><strong>BCA</strong> - Alvas College, Mangalore University (2017-2020)[cite: 1]</p>
+          <div class="tags" style="margin-top: 10px;">
+            <span class="tag">English (Professional)</span>[cite: 1]
+            <span class="tag">Hindi (Professional)</span>[cite: 1]
+            <span class="tag">Malayalam (Native)</span>[cite: 1]
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Aswin Suresh. Built for web showcase.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
